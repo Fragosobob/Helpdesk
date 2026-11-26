@@ -1,0 +1,39 @@
+# Credenciais e configurações privadas (o modelo público não tem segredos)
+env/
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+.aws/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependências, banco local e arquivos gerados
+node_modules/
+.local/
+coverage/
+.nyc_output/
+*.log
+npm-debug.log*
+
+# Cópias de bancos com dados reais; migrações SQL continuam versionadas
+backups/
+dumps/
+*.dump
+*.backup
+*.sqlite
+*.sqlite3
+
+# Configurações pessoais e arquivos temporários
+.agents/
+.codex/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
