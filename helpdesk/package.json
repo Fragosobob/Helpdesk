@@ -8,6 +8,11 @@
     "node": ">=24 <25"
   },
   "scripts": {
+    "local": "npm run db:local:start && npm run db:check && npm run db:migrate && npm start",
+    "db:local:setup": "node scripts/local-db.js setup",
+    "db:local:start": "node scripts/local-db.js start",
+    "db:local:stop": "node scripts/local-db.js stop",
+    "db:local:status": "node scripts/local-db.js status",
     "start": "node --env-file-if-exists=env/.env backend/server.js",
     "dev": "node --watch --env-file-if-exists=env/.env backend/server.js",
     "check": "node scripts/check.js",
