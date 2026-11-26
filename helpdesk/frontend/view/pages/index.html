@@ -22,7 +22,7 @@
     <h1 class="titulo-login">Help Desk IFCE</h1>
     <p class="subtitulo-login">Campus Boa Viagem</p>
 
-    <!-- login -->
+    <!-- cadastro -->
     <form action="/api/auth/login" method="POST" data-auth="login">
 
         <!-- e-mail -->
@@ -34,14 +34,13 @@
         <!-- senha -->
         <div class="campo">
             <label for="senha">Senha</label>
-            <input type="password" class="entrada" id="senha" name="senha" autocomplete="current-password" required>
+            <input type="password" class="entrada" id="senha" name="senha" maxlength="128" autocomplete="current-password" required>
         </div>
 
-        <!-- botão entrar -->
         <button type="submit" class="botao botao-verde botao-largo">Entrar</button>
     </form>
 
-    <!-- link -->
+    <!-- link de voltar -->
     <p class="rodape-cartao">
         Ainda não tem conta? <a href="cadastro.html">Criar conta</a>
     </p>
