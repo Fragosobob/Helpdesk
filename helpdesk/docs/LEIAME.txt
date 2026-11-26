@@ -1,0 +1,29 @@
+HELP DESK IFCE - PARTE DO HTML E CSS (estrutura e visual)
+
+Páginas (abrir no navegador, não precisa de servidor nem de internet):
+  index.html          tela de login
+  cadastro.html       criar conta
+  painel.html         painel do CLIENTE (contadores, busca e tabela)
+  painel-admin.html   painel do ADMINISTRADOR
+  novo-chamado.html   formulário de abrir chamado (cliente)
+  chamado.html        detalhes do chamado + mensagens (cliente)
+  chamado-admin.html  detalhes do chamado + alterar status (administrador)
+
+  assets/css/style.css          todo o visual do site
+  assets/img/fundo-ifce-boa-viagem.jpg   foto de fundo do login
+
+PARA O PESSOAL DO BACK-END:
+  - Procurem nos arquivos por: PARA O PESSOAL DO BACK-END
+    Cada comentário desses mostra onde ligar o PHP/banco.
+  - Já liguei a navegação: login -> painel.html, criar conta -> index.html,
+    enviar chamado -> painel.html. Nesses 3 formulários, troquem o action pelo PHP
+    de cada um (o PHP é quem redireciona depois de salvar).
+  - Os outros formulários (mensagem, status) estão com action="": coloquem o PHP de cada um.
+  - Os atributos name="..." dos campos já estão prontos (email, senha, nome,
+    confirmar_senha, titulo, categoria, prioridade, local_problema, descricao,
+    mensagem, novo_status, busca, status).
+  - As linhas de "Exemplo" nas tabelas e mensagens são só para mostrar o visual.
+  - Para virar .php é só renomear o arquivo (ex: painel.html -> painel.php)
+    e trocar os links .html pelos .php.
+  - A barra verde do topo se repete nas páginas internas; vocês podem
+    movê-la para um arquivo único (include) se quiserem.

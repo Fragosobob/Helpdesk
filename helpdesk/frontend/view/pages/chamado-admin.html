@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chamado - Help Desk IFCE</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="/js/ui.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/chamados.js" defer></script>
+</head>
+<body data-perfil="atendente">
+
+<!-- pular conteúdo -->
+<a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- topo -->
+<header class="topo">
+    <div class="container topo-conteudo">
+
+        <a class="topo-marca" href="painel-admin.html">
+            Help Desk IFCE
+            <small>Campus Boa Viagem</small>
+        </a>
+
+        <div class="topo-direita">
+            <span class="topo-usuario">Carregando usuário…</span>
+            <button type="button" data-logout class="botao botao-pequeno botao-contorno-branco">Sair</button>
+        </div>
+    </div>
+</header>
+
+<!-- conteúdo -->
+<main id="conteudo" class="container">
+<div tabindex="-1" data-ticket-message class="aviso" role="status" aria-live="polite" hidden></div>
+<div tabindex="-1" data-auth-message class="aviso" role="status" aria-live="polite" hidden></div>
+
+<p><a href="painel-admin.html">&larr; Voltar ao painel</a></p>
+
+<p data-detail-loading role="status">Carregando chamado…</p>
+<!-- dados do chamado -->
+<div class="caixa" data-ticket-details hidden>
+<div class="chamado-topo"><h1 class="titulo-chamado" data-ticket-title></h1><span data-ticket-badge></span></div>
+<dl class="detalhes">
+<dt>Cliente</dt><dd data-field="solicitante_nome"></dd>
+<dt>Categoria</dt><dd data-field="categoria"></dd>
+<dt>Prioridade</dt><dd data-field="prioridade"></dd>
+<dt>Local do problema</dt><dd data-field="local_problema"></dd>
+<dt>Data de abertura</dt><dd data-field="criado_em"></dd>
+<dt>Última atualização</dt><dd data-field="atualizado_em"></dd>
+<dt>Descrição</dt><dd data-field="descricao"></dd>
+</dl>
+</div>
+
+<!-- status do chamado -->
+<div class="caixa" data-status-box hidden>
+    <h2 class="subtitulo">Alterar status</h2>
+
+    <!-- alterar status -->
+    <form action="" method="POST" class="form-status" data-ticket-status>
+        <!-- novo status -->
+        <div class="campo">
+            <label for="novo_status">Novo status</label>
+            <select class="entrada" id="novo_status" name="novo_status">
+                <option value="aberto">Aberto</option>
+                <option value="em_atendimento" selected>Em atendimento</option>
+                <option value="resolvido">Resolvido</option>
+            </select>
+        </div>
+        <button type="submit" class="botao botao-verde">Atualizar status</button>
+    </form>
+
+
+</div>
+
+<p class="texto-apagado">Mensagens entre solicitante e atendente ainda não estão disponíveis.</p>
+
+</main>
+
+<!-- rodapé -->
+<footer class="rodape">
+    Help Desk IFCE &middot; Campus Boa Viagem &middot; Projeto escolar
+</footer>
+
+</body>
+</html>

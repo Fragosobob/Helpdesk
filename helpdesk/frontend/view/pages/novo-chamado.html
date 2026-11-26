@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abrir chamado - Help Desk IFCE</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="/js/ui.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/chamados.js" defer></script>
+</head>
+<body data-perfil="solicitante">
+
+<!-- pular conteúdo -->
+<a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- topo -->
+<header class="topo">
+    <div class="container topo-conteudo">
+
+        <a class="topo-marca" href="painel.html">
+            Help Desk IFCE
+            <small>Campus Boa Viagem</small>
+        </a>
+
+        <div class="topo-direita">
+            <span class="topo-usuario">Carregando usuário…</span>
+            <button type="button" data-logout class="botao botao-pequeno botao-contorno-branco">Sair</button>
+        </div>
+    </div>
+</header>
+
+<!-- conteúdo -->
+<main id="conteudo" class="container">
+<div tabindex="-1" data-ticket-message class="aviso" role="status" aria-live="polite" hidden></div>
+<div tabindex="-1" data-auth-message class="aviso" role="status" aria-live="polite" hidden></div>
+
+<h1 class="titulo-pagina">Abrir chamado</h1>
+
+<!-- novo chamado -->
+<form action="/api/chamados" method="POST" class="caixa" data-new-ticket>
+
+    <!-- título -->
+    <div class="campo">
+        <label for="titulo">Título</label>
+        <input type="text" class="entrada" id="titulo" name="titulo" maxlength="150" required>
+    </div>
+
+    <!-- categoria e prioridade -->
+    <div class="duas-colunas">
+        <!-- categoria -->
+        <div class="campo">
+            <label for="categoria">Categoria</label>
+            <select class="entrada" id="categoria" name="categoria" required>
+                <option value="">Selecione...</option>
+                <option value="computador">Computador</option>
+                <option value="internet">Internet</option>
+                <option value="sistema">Sistema</option>
+                <option value="impressora">Impressora</option>
+                <option value="outros">Outros</option>
+            </select>
+        </div>
+        <!-- prioridade -->
+        <div class="campo">
+            <label for="prioridade">Prioridade</label>
+            <select class="entrada" id="prioridade" name="prioridade" required>
+                <option value="baixa">Baixa</option>
+                <option value="media" selected>Média</option>
+                <option value="alta">Alta</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- local do problema -->
+    <div class="campo">
+        <label for="local_problema">Local do problema (opcional)</label>
+        <input type="text" class="entrada" id="local_problema" name="local_problema"
+               maxlength="100" placeholder="Laboratório 2, Sala 10 ou Biblioteca">
+    </div>
+
+    <!-- descrição do problema -->
+    <div class="campo">
+        <label for="descricao">Descrição do problema</label>
+        <textarea class="entrada" id="descricao" name="descricao" rows="6" maxlength="5000" required></textarea>
+        <div class="dica">Até 5000 caracteres.</div>
+    </div>
+
+    <div class="botoes">
+        <button type="submit" class="botao botao-verde">Enviar chamado</button>
+        <a href="painel.html" class="botao botao-contorno-cinza">Voltar</a>
+    </div>
+</form>
+
+</main>
+
+<!-- rodapé -->
+<footer class="rodape">
+    Help Desk IFCE &middot; Campus Boa Viagem &middot; Projeto escolar
+</footer>
+
+</body>
+</html>

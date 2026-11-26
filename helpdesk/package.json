@@ -1,0 +1,29 @@
+{
+  "name": "helpdesk-ifce",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Help Desk IFCE — Operação Sobrevivência Total",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=env/.env backend/server.js",
+    "dev": "node --watch --env-file-if-exists=env/.env backend/server.js",
+    "check": "node scripts/check.js",
+    "db:check": "node --env-file-if-exists=env/.env backend/database/cli.js check",
+    "db:migrate": "node --env-file-if-exists=env/.env backend/database/cli.js migrate",
+    "test": "node --test",
+    "admin:create": "node --env-file-if-exists=env/.env scripts/criar-atendente.js"
+  },
+  "dependencies": {
+    "connect-pg-simple": "10.0.0",
+    "express": "5.2.1",
+    "express-rate-limit": "8.7.5",
+    "express-session": "1.19.0",
+    "pg": "8.23.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.6.0"
+  }
+}

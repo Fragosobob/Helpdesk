@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Painel - Help Desk IFCE</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="/js/ui.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/chamados.js" defer></script>
+</head>
+<body data-perfil="atendente">
+
+<!-- pular conteúdo -->
+<a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- topo -->
+<header class="topo">
+    <div class="container topo-conteudo">
+
+        <a class="topo-marca" href="painel-admin.html">
+            Help Desk IFCE
+            <small>Campus Boa Viagem</small>
+        </a>
+
+        <div class="topo-direita">
+            <span class="topo-usuario">Carregando usuário…</span>
+            <button type="button" data-logout class="botao botao-pequeno botao-contorno-branco">Sair</button>
+        </div>
+    </div>
+</header>
+
+<!-- conteúdo -->
+<main id="conteudo" class="container">
+<div tabindex="-1" data-ticket-message class="aviso" role="status" aria-live="polite" hidden></div>
+<div tabindex="-1" data-auth-message class="aviso" role="status" aria-live="polite" hidden></div>
+
+<!-- cabeçalho da página -->
+<div class="cabecalho-pagina">
+    <div>
+        <h1 class="titulo-pagina">Atendimento de chamados</h1>
+        <p class="texto-apagado">Veja os chamados de todos os solicitantes.</p>
+    </div>
+
+</div>
+
+<!-- contadores -->
+<div class="contadores contadores-admin">
+    <div class="contador contador-total">
+        <span class="contador-numero">—</span>
+        <span class="contador-texto">Total de chamados</span>
+    </div>
+    <div class="contador contador-aberto">
+        <span class="contador-numero">—</span>
+        <span class="contador-texto">Abertos</span>
+    </div>
+    <div class="contador contador-em_atendimento">
+        <span class="contador-numero">—</span>
+        <span class="contador-texto">Em atendimento</span>
+    </div>
+    <div class="contador contador-resolvido">
+        <span class="contador-numero">—</span>
+        <span class="contador-texto">Resolvidos</span>
+    </div>
+</div>
+
+<p class="texto-apagado">Os contadores mostram todos os chamados aos quais você tem acesso, independentemente dos filtros.</p>
+<!-- busca -->
+<form action="" method="GET" class="caixa busca" data-ticket-search>
+    <!-- buscar por número ou título -->
+    <div class="campo">
+        <label for="busca">Buscar por número ou título</label>
+        <input type="text" class="entrada" id="busca" name="busca" maxlength="150">
+    </div>
+
+    <!-- status -->
+    <div class="campo">
+        <label for="status">Status</label>
+        <select class="entrada" id="status" name="status">
+            <option value="">Todos</option>
+            <option value="aberto">Aberto</option>
+            <option value="em_atendimento">Em atendimento</option>
+            <option value="resolvido">Resolvido</option>
+        </select>
+    </div>
+
+    <!-- botões da busca -->
+    <div class="busca-botoes">
+        <button type="submit" class="botao botao-verde">Buscar</button>
+        <a href="painel-admin.html" class="botao botao-contorno-cinza">Limpar busca e filtro</a>
+    </div>
+</form>
+
+<p data-results role="status" aria-live="polite">Carregando chamados…</p>
+<!-- tabela de chamados -->
+<div class="caixa tabela-rolagem" tabindex="0" role="region" aria-label="Lista de chamados; role para os lados em telas pequenas">
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th scope="col">Nº</th>
+                <th scope="col">Título</th>
+                    <th scope="col">Cliente</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Prioridade</th>
+                <th scope="col">Status</th>
+                <th scope="col">Abertura</th>
+                <th scope="col"><span class="so-leitor-de-tela">Ações</span></th>
+            </tr>
+        </thead>
+        <tbody data-ticket-list><tr><td colspan="8">Carregando chamados…</td></tr></tbody>
+    </table>
+</div>
+
+</main>
+
+<!-- rodapé -->
+<footer class="rodape">
+    Help Desk IFCE &middot; Campus Boa Viagem &middot; Projeto escolar
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Entrar - Help Desk IFCE</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="/js/ui.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+</head>
+<body class="pagina-login">
+
+<!-- pular conteúdo -->
+<a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- conteúdo -->
+<main id="conteudo" class="container">
+<div tabindex="-1" data-auth-message class="aviso" role="status" aria-live="polite" hidden></div>
+
+<div class="cartao-login">
+
+    <h1 class="titulo-login">Help Desk IFCE</h1>
+    <p class="subtitulo-login">Campus Boa Viagem</p>
+
+    <!-- login -->
+    <form action="/api/auth/login" method="POST" data-auth="login">
+
+        <!-- e-mail -->
+        <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" class="entrada" id="email" name="email" maxlength="150" autocomplete="email" required>
+        </div>
+
+        <!-- senha -->
+        <div class="campo">
+            <label for="senha">Senha</label>
+            <input type="password" class="entrada" id="senha" name="senha" autocomplete="current-password" required>
+        </div>
+
+        <!-- botão entrar -->
+        <button type="submit" class="botao botao-verde botao-largo">Entrar</button>
+    </form>
+
+    <!-- link -->
+    <p class="rodape-cartao">
+        Ainda não tem conta? <a href="cadastro.html">Criar conta</a>
+    </p>
+</div>
+
+</main>
+
+<!-- rodapé -->
+<footer class="rodape">
+    Help Desk IFCE &middot; Campus Boa Viagem &middot; Projeto escolar
+</footer>
+
+</body>
+</html>
