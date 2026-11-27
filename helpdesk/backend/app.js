@@ -7,6 +7,7 @@ import { createPool } from './database/connection.js';
 import { authRoutes } from './routes/auth.js';
 const pagesPath = fileURLToPath(new URL('../frontend/view/pages/', import.meta.url));
 const assetsPath = fileURLToPath(new URL('../frontend/assets/', import.meta.url));
+const stylesPath = fileURLToPath(new URL('../frontend/src/css/', import.meta.url));
 const scriptsPath = fileURLToPath(new URL('../frontend/src/js/', import.meta.url));
 
 export function createApp({ pool, store, env = process.env } = {}) {
@@ -23,7 +24,8 @@ export function createApp({ pool, store, env = process.env } = {}) {
     next();
   });
   app.use('/assets', express.static(assetsPath));
-  app.use('/js', express.static(scriptsPath));
+  app.use(['/js', '/src/js'], express.static(scriptsPath));
+  app.use(['/css', '/src/css'], express.static(stylesPath));
   app.use((req, res, next) => { res.set('Cache-Control', 'no-store'); next(); });
   app.use(express.json({ limit: '64kb' }));
   app.get(['/', '/index.html', '/cadastro.html'], (req, res) => res.sendFile(req.path === '/cadastro.html' ? 'cadastro.html' : 'index.html', { root: pagesPath }));

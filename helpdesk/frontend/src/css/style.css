@@ -336,7 +336,7 @@ textarea.entrada {
 .pagina-login {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-        url("../img/fundo-ifce-boa-viagem.jpg");
+        url("../../assets/img/fundo-ifce-boa-viagem.jpg");
     background-size: cover;
     background-position: center 55%;
     background-repeat: no-repeat;
